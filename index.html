@@ -17,7 +17,7 @@
 
     <main>
         <!--overview first 7: 15s-->
-        <header>
+        <header class="mb-4">
             <div class="form-control w-1/2 mx-auto max-w-xs">
                 <label class="label">
                     <span class="label-text">Search your products?</span>
@@ -29,27 +29,31 @@
             </div>
         </header>
 
+        <section>
+            <!-- flex grow from tailwind-->
+            <div class="flex">
+                <!-- menu from daisy ui -->
+                <div class="flex-none m-2">
+                    <ul id="all-menue" class="menu  bg-secondary text-secondary-content p-2 rounded-box">
+
+                        <!-- li category dynamically added -->
+
+                    </ul>
+                </div>
+
+                <!-- products card template in js file added daisy UI -->
+                <div id="product-container" class="grow grid grid-cols-4 gap-4 m-2">
+
+                    <!--card dynamically added js from daisy ui -->
+
+                </div>
+            </div>
+        </section>
+
+
     </main>
 
-    <div>
-        <!-- flex grow from tailwind-->
-        <div class="flex">
-            <!-- menu from daisy ui -->
-            <div class="flex-none">
-                <ul id="all-menue" class="menu  bg-secondary text-secondary-content p-2 rounded-box">
 
-                    <!-- li category dynamically added -->
-
-                </ul>
-            </div>
-
-            <!-- products -->
-            <div class="grow">
-                02
-            </div>
-
-        </div>
-    </div>
 
 
     <script src="js/index.js"></script>

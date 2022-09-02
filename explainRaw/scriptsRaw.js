@@ -49,6 +49,7 @@ searchField.addEventListener("keypress", async (event) => {
 })
 
 
+        //productContainer.textContent = ""; error: ja serach dibo ta prothome thkte hobe
 
 
 

@@ -46,7 +46,30 @@ searchField.addEventListener("keypress", async (event) => {
         const allProducts = await loadAllProducts();
         // console.log(allProducts);
         const foundProducts = allProducts.filter(product => product.category.includes(searchValue));
-        console.log(foundProducts);
+        // console.log(foundProducts);
+
+        // now using forEach Show all products search html display.
+        const productContainer = document.getElementById("product-container");
+
+        foundProducts.forEach(product => {
+            console.log(product);
+
+            const div = document.createElement("div");
+            div.innerHTML = `
+            <div class="card card-compact w-full bg-base-100 shadow-xl">
+                <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+                    <div class="card-body">
+                          <h2 class="card-title">Shoes!</h2>
+                          <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="card-actions justify-end">
+                             <button class="btn btn-primary">Show Details</button>
+                        </div>
+                    </div>
+            </div>
+            `;
+            productContainer.appendChild(div);
+
+        })
     }
 })
 
