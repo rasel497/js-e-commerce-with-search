@@ -10,9 +10,22 @@ const loadProducts = async () => {
 //create func-01
 // two types of promise 1. resolved 2. reject
 const setAllMenue = async () => {
-    // alternative way to resolved promise add async in setAllMenue
     const data = await loadProducts();
-    console.log(data)
+    //02. set id all-menue index.html file n here
+    const menue = document.getElementById('all-menue');
+
+    //01. add for loop set data to ul
+    for (const product of data) {
+        // console.log(product.category); // show category of products
+        const li = document.createElement('li');
+        li.innerHTML = `
+        <a>${product.category}</a>
+
+        `;
+        menue.appendChild(li);
+
+    }
+
 }
 setAllMenue();
 
