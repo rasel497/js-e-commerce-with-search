@@ -14,16 +14,23 @@ const setAllMenue = async () => {
     //02. set id all-menue index.html file n here
     const menue = document.getElementById('all-menue');
 
+    //03. uniqueArray use jeno bar bar same jinish repeate na hoy.
+    const uniqueArray = [];
+
     //01. add for loop set data to ul
     for (const product of data) {
-        // console.log(product.category); // show category of products
-        const li = document.createElement('li');
-        li.innerHTML = `
-        <a>${product.category}</a>
+        // console.log(product.category); // show category of products.
+        //04. kichu thkle index dibe na thkle -1 dibe, 
+        // this line ignore same category onther times in li list.
+        if (uniqueArray.indexOf(product.category) === -1) {
+            uniqueArray.push(product.category);
 
-        `;
-        menue.appendChild(li);
-
+            const li = document.createElement('li');
+            li.innerHTML = `
+            <a>${product.category}</a>
+            `;
+            menue.appendChild(li);
+        }
     }
 
 }
