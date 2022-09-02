@@ -35,9 +35,14 @@ const setAllMenue = async () => {
 }
 setAllMenue();
 
+// loadAllProducts();
+
 //search-ctg-01. create id in search-field
 const searchField = document.getElementById('search-field');
 searchField.addEventListener("keypress", async (event) => {
+    const spinner = document.getElementById('spinner'); // spinner
+    spinner.classList.remove("hidden");
+
     // console.log(event.key); //inital key press console
     if (event.key === "Enter") {
         // console.log(event.key); // press enter
@@ -45,6 +50,8 @@ searchField.addEventListener("keypress", async (event) => {
         const searchValue = searchField.value;
         const allProducts = await loadAllProducts();
         // console.log(allProducts);
+        spinner.classList.add("hidden");;
+
         const foundProducts = allProducts.filter(product => product.category.includes(searchValue));
         // console.log(foundProducts);
 
@@ -101,4 +108,3 @@ const showModal = (description, image) => {
 
 
 
-// loadAllProducts();
