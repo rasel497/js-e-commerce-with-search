@@ -50,19 +50,21 @@ searchField.addEventListener("keypress", async (event) => {
 
         // now using forEach Show all products search html display.
         const productContainer = document.getElementById("product-container");
-
+        productContainer.textContent = ""; // ja serach ta prothome thkbe
         foundProducts.forEach(product => {
             console.log(product);
+
+            const { category, image, title } = product;
 
             const div = document.createElement("div");
             div.innerHTML = `
             <div class="card card-compact w-full bg-base-100 shadow-xl">
-                <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+                <figure><img src="${image}" class="h-60 w-full" alt="Shoes" /></figure>
                     <div class="card-body">
-                          <h2 class="card-title">Shoes!</h2>
-                          <p>If a dog chews shoes whose shoes does he choose?</p>
+                          <h2 class="card-title">${category}</h2>
+                          <p>${title.length > 20 ? title.slice(0, 20) + '...' : title}</p>
                         <div class="card-actions justify-end">
-                             <button class="btn btn-primary">Show Details</button>
+                             <button class="btn btn-primary">Buy Now</button>
                         </div>
                     </div>
             </div>
