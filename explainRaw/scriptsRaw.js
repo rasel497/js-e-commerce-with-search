@@ -44,9 +44,7 @@ searchField.addEventListener("keypress", async (event) => {
         // console.log(searchField.value);
         const searchValue = searchField.value;
         const allProducts = await loadAllProducts();
-        // console.log(allProducts);
-        const foundProducts = allProducts.filter(product => product.category.includes(searchValue));
-        console.log(foundProducts);
+        console.log(allProducts);
     }
 })
 
