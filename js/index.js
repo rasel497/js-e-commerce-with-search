@@ -9,10 +9,10 @@ const loadProducts = async () => {
 }
 //create func-01
 // two types of promise 1. resolved 2. reject
-const setAllMenue = () => {
-    // console.log(loadProducts());
-    loadProducts()
-        .then(data => console.log(data)) // resolved promised
+const setAllMenue = async () => {
+    // alternative way to resolved promise add async in setAllMenue
+    const data = await loadProducts();
+    console.log(data)
 }
 setAllMenue();
 
