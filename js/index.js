@@ -51,6 +51,19 @@ searchField.addEventListener("keypress", async (event) => {
         // now using forEach Show all products search html display.
         const productContainer = document.getElementById("product-container");
         productContainer.textContent = ""; // ja serach ta prothome thkbe
+
+        // seach not found
+        const notFund = document.getElementById('not-found');
+        notFund.textContent = "";
+        // seach not found
+        if (foundProducts.length === 0) {
+            // console.log('Not found search');
+            notFund.innerHTML = `
+            <h2 class=" text-2xl text-orange-500 text-center">Search not found!</h2>
+            `
+            return;
+        }
+
         foundProducts.forEach(product => {
             console.log(product);
 
